@@ -10,6 +10,7 @@ thread2 = SingletonTest("Thread 2")
 t1 = threading.Thread(target=thread1.run)
 t2 = threading.Thread(target=thread2.run)
 
+
 # 啟動執行緒
 t1.start();
 t2.start();
