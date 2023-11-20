@@ -70,7 +70,28 @@
     }
     ```
 
-## 多執行緒狀況
+## 程式寫法 - python
+
+python 無法像 C# 一樣直接開始就訪問類別自身, 因此可以等到要呼叫再創建物件
+
+```python
+class Singleton:
+    _singletonGreed = None
+
+    def __init__(self):
+        pass
+
+    #靜態方法不需要依賴類的實例化
+    @staticmethod
+    def getSingleton():
+        if Singleton._singletonGreed is None:
+            Singleton._singletonGreed = Singleton()
+            
+        print("Return greed object")
+        return Singleton._singletonGreed
+```
+
+## 多執行緒狀況 - C#
 
 - 當多執行緒呼叫時, 可能無法保證類別只會產生一個物件, 例如下方為多執行緒呼叫
 
@@ -145,4 +166,58 @@
             }
         }
     }
+    ```
+
+## 多執行緒狀況 - python
+
+- 當多執行緒呼叫時, 可能無法保證類別只會產生一個物件, 例如下方為多執行緒呼叫
+
+    ```python
+    class SingletonTest:
+        def __init__(self, my_id):
+            self.my_id = my_id
+
+        def run(self):
+            # 把要做的事封装至run()
+            singleton = Singleton.getSingleton()
+            if singleton is not None:
+                print(f"{self.my_id} create Singleton: {id(singleton)}")
+
+    # 創建多個執行緒
+    thread1 = SingletonTest("Thread 1")
+    thread2 = SingletonTest("Thread 2")
+
+    t1 = threading.Thread(target=thread1.run)
+    t2 = threading.Thread(target=thread2.run)
+
+    # 啟動執行緒
+    t1.start();
+    t2.start();
+
+    # 等待執行緒任務完成
+    t1.join();
+    t2.join();
+    ```
+
+- 修正上述問題, 只需要確保getSingleton()被呼叫時上鎖
+
+    ```python
+    class Singleton:
+    _singleton = None  # 使用 None 表示尚未創建物件
+    _lock_object = threading.Lock()
+
+    def __init__(self):
+        pass
+
+    #靜態方法不需要依賴類的實例化
+    @staticmethod
+    def getSingleton():
+        # 保證 get_singleton() 被呼叫時鎖住,
+        # 執行緒只有等 get_singleton() 執行完後才會讓出時間, 避免不同執行緒各自產生新的實體
+        with Singleton._lock_object:
+            if Singleton._singleton is None:
+                print("Return first time")
+                Singleton._singleton = Singleton()
+                print(f"create Singleton: {id(Singleton._singleton)}")
+            return Singleton._singleton
     ```
