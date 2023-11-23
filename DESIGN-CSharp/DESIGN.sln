@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.33328.57
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sigleton", "DESIGN\Sigleton.csproj", "{1CEB0DD4-652D-43F3-B74E-E5C2123B48FB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sigleton", "Singleton\Sigleton.csproj", "{1CEB0DD4-652D-43F3-B74E-E5C2123B48FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleFactory", "SimpleFactory\SimpleFactory.csproj", "{32328D9C-39DC-4DD5-87FC-5ED84DF63FC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{1CEB0DD4-652D-43F3-B74E-E5C2123B48FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CEB0DD4-652D-43F3-B74E-E5C2123B48FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CEB0DD4-652D-43F3-B74E-E5C2123B48FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32328D9C-39DC-4DD5-87FC-5ED84DF63FC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32328D9C-39DC-4DD5-87FC-5ED84DF63FC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32328D9C-39DC-4DD5-87FC-5ED84DF63FC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32328D9C-39DC-4DD5-87FC-5ED84DF63FC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
