@@ -10,7 +10,7 @@ namespace SimpleFactory
     {
         public override string getType()
         {
-            Console.WriteLine("this is Adventurer ");
+            Console.WriteLine("this is Archar ");
             return this.GetType().Name;
         }
     }

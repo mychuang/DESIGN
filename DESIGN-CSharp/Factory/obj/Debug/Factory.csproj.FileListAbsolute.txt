@@ -1,0 +1,6 @@
+D:\Miller_project\DESIGN\DESIGN-CSharp\Factory\obj\Debug\Factory.csproj.CoreCompileInputs.cache
+D:\Miller_project\DESIGN\DESIGN-CSharp\Factory\bin\Debug\Factory.exe.config
+D:\Miller_project\DESIGN\DESIGN-CSharp\Factory\bin\Debug\Factory.exe
+D:\Miller_project\DESIGN\DESIGN-CSharp\Factory\bin\Debug\Factory.pdb
+D:\Miller_project\DESIGN\DESIGN-CSharp\Factory\obj\Debug\Factory.exe
+D:\Miller_project\DESIGN\DESIGN-CSharp\Factory\obj\Debug\Factory.pdb
