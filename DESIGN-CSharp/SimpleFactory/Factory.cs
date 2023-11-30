@@ -8,10 +8,10 @@ namespace SimpleFactory
 {
     public class Factory
     {
-        public static Archer trainArcher(int type) {
+        public static Adventurer trainAdventurer(int type) {
             if (type == 1)
             {
-                return new Adventurer();
+                return new Archer();
             }
             else if (type == 2)
             {

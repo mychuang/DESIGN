@@ -1,10 +1,10 @@
-from Archer import Warrior, Adventurer
+from Adventurer import Warrior, Archer
 
 class Factory:
     @staticmethod
-    def train_archer(type):
+    def trainAdventurer(type):
         if type == 1:
-            return Adventurer()
+            return Archer()
         elif type == 2:
             return Warrior()
         else:

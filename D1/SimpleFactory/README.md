@@ -29,7 +29,7 @@
 1. 創建虛擬類-定義冒險者
 
     ```Csharp
-    public abstract class Archer
+    public abstract class Adventurer
     {
         public abstract string getType();
     }
@@ -38,7 +38,7 @@
 2. 創建產品類-定義弓箭手與鬥士
 
     ```CSharp
-    class Adventurer : Archer
+    class Archer : Adventurer
     {
         public override string getType()
         {
@@ -47,7 +47,7 @@
         }
     }
 
-    class Warrior: Archer
+    class Warrior: Adventurer
     {
         public override string getType() {
             Console.WriteLine("this is Warrior ");
@@ -59,12 +59,12 @@
 3. 創建工廠: 冒險者訓練營
 
     ```CSharp
-    class Factory
+    public class Factory
     {
-        public static Archer trainArcher(int type) {
+        public static Adventurer trainAdventurer(int type) {
             if (type == 1)
             {
-                return new Adventurer();
+                return new Archer();
             }
             else if (type == 2)
             {
@@ -83,17 +83,17 @@
 - 創建冒險者與其產品
 
     ```python
-    class Archer:
-        def get_type(self):
+    class Adventurer:
+        def getType(self):
             pass
 
-    class Warrior(Archer):
-        def get_type(self):
+    class Warrior(Adventurer):
+        def getType(self):
             print("This is Warrior")
             return type(self).__name__
 
-    class Adventurer(Archer):
-        def get_type(self):
+    class Archer(Adventurer):
+        def getType(self):
             print("This is Adventurer")
             return type(self).__name__
     ```
@@ -103,9 +103,9 @@
     ```python
     class Factory:
         @staticmethod
-        def train_archer(type):
+        def trainAdventurer(type):
             if type == 1:
-                return Adventurer()
+                return Archer()
             elif type == 2:
                 return Warrior()
             else:

@@ -10,11 +10,11 @@ namespace SimpleFactory
     {
         static void Main(string[] args)
         {
-            Archer A = Factory.trainArcher(1);
+            Adventurer A = Factory.trainAdventurer(1);
             string aClass = A.getType();
             Console.WriteLine(aClass);
 
-            Archer B = Factory.trainArcher(2);
+            Adventurer B = Factory.trainAdventurer(2);
             string bClass = B.getType();
             Console.WriteLine(bClass);
 

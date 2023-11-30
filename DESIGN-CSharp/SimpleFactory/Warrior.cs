@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimpleFactory
 {
-    class Warrior: Archer
+    class Warrior: Adventurer
     {
         public override string getType() {
             Console.WriteLine("this is Warrior ");

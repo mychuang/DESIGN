@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace SimpleFactory
 {
-    public abstract class Archer
+    class Archer : Adventurer
     {
-        public abstract string getType();
+        public override string getType()
+        {
+            Console.WriteLine("this is Adventurer ");
+            return this.GetType().Name;
+        }
     }
 }

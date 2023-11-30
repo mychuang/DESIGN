@@ -1,13 +1,13 @@
-class Archer:
-    def get_type(self):
+class Adventurer:
+    def getType(self):
         pass
 
-class Warrior(Archer):
-    def get_type(self):
+class Warrior(Adventurer):
+    def getType(self):
         print("This is Warrior")
         return type(self).__name__
 
-class Adventurer(Archer):
-    def get_type(self):
+class Archer(Adventurer):
+    def getType(self):
         print("This is Adventurer")
         return type(self).__name__
