@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleFactory", "SimpleFact
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factory", "Factory\Factory.csproj", "{9CB8BFC2-179B-4E0A-B0F9-198FF269B90B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractFactory", "AbstractFactory\AbstractFactory.csproj", "{A32C9599-AAA1-4F20-B52D-14844EA8FBDA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{9CB8BFC2-179B-4E0A-B0F9-198FF269B90B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CB8BFC2-179B-4E0A-B0F9-198FF269B90B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CB8BFC2-179B-4E0A-B0F9-198FF269B90B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A32C9599-AAA1-4F20-B52D-14844EA8FBDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A32C9599-AAA1-4F20-B52D-14844EA8FBDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A32C9599-AAA1-4F20-B52D-14844EA8FBDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A32C9599-AAA1-4F20-B52D-14844EA8FBDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
