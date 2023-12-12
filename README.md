@@ -2,15 +2,19 @@
 
 ## 創建型模式
 
-- 單例模式
+- [單例模式](./D1/Singleton/README.md)
 
-- 簡單工廠模式
+- [簡單工廠模式](./D1/SimpleFactory/README.md)
 
-- 工廠模式
+- [工廠模式](./D1/Factory/README.md)
+
+- [抽象工廠模式](./D1/AbstractFactory/README.md)
 
 ## 結構型模式
 
 ## 行為模式
+
+- [策略模式](./D3/Strategy/README.md)
 
 ### 參考資料
 
