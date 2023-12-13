@@ -26,101 +26,162 @@
 
 ## 程式寫法 - C#
 
-冒險者必須使用不同的策略來對付不同的怪物
+冒險者必須使用不同的策略來對付不同的怪物，因此需有一個策略界面，並且建立各種實體策略。
 
-### 裝備類與裝備工廠
-
-1. 創建衣服產品類
+1. 創建策略
 
     ```Csharp
-    
+    public abstract class FlightStrategy
+    {
+        public abstract void execute();
+    }
+
+    public class NormalAttack : FlightStrategy
+    {
+        public override void execute()
+        {
+            Console.WriteLine("execute normal attack ");
+        }
+    }
+
+    public class UseSkill : FlightStrategy
+    {
+        public override void execute()
+        {
+            Console.WriteLine("execute skill attack ");
+        }
+    }
+
+    public class UseItem : FlightStrategy
+    {
+        public override void execute()
+        {
+            Console.WriteLine("execute item attack ");
+        }
+    }
     ```
 
-2. 創建武器產品類
+2. 創建冒險者使用界面 (環境類別)
 
     ```Csharp
-    
+    class Adventure
+    {
+        FlightStrategy flightStrategy;
+
+        public void attack() 
+        {
+            if (flightStrategy == null) 
+            {
+                flightStrategy = new NormalAttack();
+            }
+            flightStrategy.execute();
+        }
+
+        public void choiceStrategy(FlightStrategy strategy)
+        {
+            this.flightStrategy = strategy;
+        }
+    }
     ```
 
-3. 創建裝備虛擬工廠類
-
-    ```CSharp
-    
-    ```
-
-4. 創建勇士裝備工廠類
-
-    ```CSharp
-    
-    ```
-
-5. 創建弓箭手裝備工廠類
-
-    ```CSharp
-    
-    ```
-
-### 冒險者類與冒險者工廠
-
-1. 冒險者類
+3. 測試結果
 
     ```Csharp
-    
-    ```
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Adventure adventure = new Adventure();
 
-2. 冒險者工廠類
+            adventure.choiceStrategy(new NormalAttack());
+            adventure.attack();
 
-    ```Csharp
-    
+            adventure.choiceStrategy(new UseSkill());
+            adventure.attack();
+
+            adventure.choiceStrategy(new UseItem());
+            adventure.attack();
+
+            Console.ReadKey();
+        }
+    }
     ```
 
 ## 程式寫法 - python
 
-### 裝備類與裝備工廠
-
-1. 創建衣服產品類
+1. 創建策略
 
     ```python
-    
+    class FlightStrategy:
+        def execute(self):
+            pass
+
+    class NormalAttack(FlightStrategy):
+        def execute(self):
+            print("execute normal attack ")
+
+    class UseSkill(FlightStrategy):
+        def execute(self):
+            print("execute skill attack")
+
+    class UseItem(FlightStrategy):
+        def execute(self):
+            print("execute item attack")
     ```
 
-2. 創建武器產品類
+2. 創建冒險者使用界面 (環境類別)
 
     ```python
-    
+    class Adventure:
+        def __init__(self):
+            self.flightStrategy = None
+
+        def attack(self):
+            if self.flightStrategy is None:
+                self.flightStrategy = NormalAttack()
+            self.flightStrategy.execute()
+
+        def chooseStrategy(self, strategy):
+            self.flightStrategy = strategy
     ```
 
-3. 創建裝備虛擬工廠類
+3. 測試結果
 
     ```python
-    
+    adventure = Adventure()
+
+    adventure.chooseStrategy(NormalAttack())
+    adventure.attack()
+
+    adventure.chooseStrategy(UseSkill())
+    adventure.attack()
+
+    adventure.chooseStrategy(UseItem())
+    adventure.attack()
     ```
 
-4. 創建勇士裝備工廠類
+## 策略模式 vs 簡單工廠模式
 
-    ```python
-    
-    ```
+<img src='./03.png' width='75%'>
 
-5. 創建弓箭手裝備工廠類
+<img src='./04.png' width='75%'>
 
-    ```python
-    
-    ```
+從類別關係圖可以看到兩者幾乎沒有差別，但從我們的範例中可以區分為:
 
-### 冒險者類與冒險者工廠
+-  簡單工廠模式: 訓練營提供不同的冒險者，至於該冒險者要做什麼事情，跟訓練營無關
 
-1. 冒險者類
+-  策略模式: 冒險者選擇不同的策略來攻擊怪物，關注點在於策略本身，而不是使用策略的冒險者，至於策略怎麼產生，使用者並不在乎
 
-    ```python
-    
-    ```
+綜上所述，兩者差別在於，簡單工廠模式的工廠類別並不會使用產品，因為其只關注如何產生物件; 策略模式中的冒險者使用界面 (環境類別) 則是使用由外部傳入的策略類別，因此必須知道策略的實際內容。<br>
 
-2. 冒險者工廠類
-241新北市三重區正義北路27號
-    ```python
-    
-    ```
+總結如下:
+
+- 簡單工廠模式是用來創建物件的模式，關注物件如何被產生
+
+- 策略模式是一種行為模式，關注行為的封裝
+
+
+
 
 
 
