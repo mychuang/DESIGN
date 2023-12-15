@@ -1,20 +1,18 @@
 # 設計模式
 
-## 創建型模式
+此紀錄主要參考網路資源與**7天學會設計模式:設計模式也可以這樣學**範例，整理閱讀順序如下
 
-- [單例模式](./D1/Singleton/README.md)
+- 創建型模式: [單例模式](./CreationalPatterns/Singleton/README.md)
 
-- [簡單工廠模式](./D1/SimpleFactory/README.md)
+- 創建型模式: [簡單工廠模式](./CreationalPatterns/SimpleFactory/README.md)
 
-- [工廠模式](./D1/Factory/README.md)
+- 創建型模式: [工廠模式](./CreationalPatterns/Factory/README.md)
 
-- [抽象工廠模式](./D1/AbstractFactory/README.md)
+- 創建型模式: [抽象工廠模式](./CreationalPatterns/AbstractFactory/README.md)
 
-## 結構型模式
+- 行為模式: [策略模式](./BehavioralPatterns/Strategy/README.md)
 
-## 行為模式
-
-- [策略模式](./D3/Strategy/README.md)
+-  結構型模式: [裝飾模式](./StructuralPatterns)
 
 ### 參考資料
 
