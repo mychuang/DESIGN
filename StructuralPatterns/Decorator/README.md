@@ -32,42 +32,226 @@
 
 ## 程式寫法 - C#
 
-1. 創建策略
+1. 創建被裝飾物件
 
     ```Csharp
+    //冒險者界面(component) - 規範冒險者的功能
+    public abstract class Adventurer
+    {
+        public abstract void attack();
+    }
     
+    //弓箭手
+    class Archer : Adventurer
+    {
+        public string name { get; set; }
+
+        public Archer(string name) 
+        {
+            this.name = name;
+        }
+
+        public override void attack()
+        {
+            Console.WriteLine("Archar attack by " + this.name);
+        }
+    }
     ```
 
-2. 創建冒險者使用界面 (環境類別)
+2. 創建裝飾界面與實做類別
 
     ```Csharp
-    
+    //稱號界面(decorator)
+    public abstract class Title : Adventurer 
+    {
+        protected Adventurer adventurer; //被裝飾的冒險者
+
+        public Title(Adventurer adventurer) 
+        {
+            this.adventurer = adventurer;
+        }
+
+        public override void attack()
+        {
+            this.adventurer.attack();
+        }
+    }
+
+    //稱號: 強壯
+    public class TitleStrong: Title
+    {
+        public TitleStrong(Adventurer adventurer) : base(adventurer)
+        {
+        }
+        
+        public override void attack()
+        {
+            Console.WriteLine(" Powerful ");
+            base.attack();
+        }
+    }
+
+    //稱號: 敏捷
+    public class TitleAgile : Title
+    {
+        public TitleAgile(Adventurer adventurer) : base(adventurer)
+        {
+        }
+
+        public override void attack()
+        {
+            Console.WriteLine(" Fast ");
+            base.attack();
+        }
+
+        //該稱號的專屬技能
+        public void useFlash() 
+        {
+            Console.WriteLine(" use Fast skill ");
+        }
+    }
+
+    //稱號: 燃燒
+    public class TitleFire : Title
+    {
+        public TitleFire(Adventurer adventurer) : base(adventurer)
+        {
+        }
+
+        public override void attack()
+        {
+            Console.WriteLine(" Burning ");
+            base.attack();
+        }
+
+        //該稱號的專屬技能
+        public void useFire()
+        {
+            Console.WriteLine(" use Burning skill ");
+        }
+    }
     ```
 
 3. 測試結果
 
     ```Csharp
-    
+    //創建沒有稱號的弓箭手
+    Adventurer archer = new Archer("Miller");
+    Console.WriteLine(" --- Archar Miller ---");
+    archer.attack();
+
+    Console.WriteLine(" ");
+            
+    Console.WriteLine(" --- get Strong Archar Miller ---");
+    TitleStrong sArcher = new TitleStrong(archer);
+    sArcher.attack();
+
+    Console.WriteLine(" ");
+
+    Console.WriteLine(" --- get Agile Strong Archar Miller ---");
+    TitleAgile aArcher = new TitleAgile(sArcher);
+    aArcher.attack();
+
+    Console.WriteLine(" ");
+
+    Console.WriteLine(" --- get Fire Agile Strong Archar Miller ---");
+    TitleFire fArcher = new TitleFire(aArcher);
+    fArcher.attack();
+
+    Console.WriteLine(" ");
+
+    Console.WriteLine(" --- get Strong Fire Agile Strong Archar Miller ---");
+    TitleStrong ssArcher = new TitleStrong(fArcher);
+    ssArcher.attack();
     ```
 
 ## 程式寫法 - python
 
-1. 創建策略
+1. 創建被裝飾物件
 
     ```python
-    
+    # 冒險者界面(component) - 規範冒險者的功能
+    class Adventurer(ABC):
+        @abstractmethod
+        def attack(self):
+            pass
+
+    class Archer(Adventurer):
+        def __init__(self, name):
+            self.name = name
+
+        def attack(self):
+            print(f"Archer attack by {self.name}")
     ```
 
-2. 創建冒險者使用界面 (環境類別)
+2. 創建裝飾界面與實做類別
 
     ```python
-    
+    # 稱號界面(decorator)
+    class Title(Adventurer, ABC):
+        def __init__(self, adventurer):
+            self.adventurer = adventurer
+
+        def attack(self):
+            self.adventurer.attack()
+
+    class TitleStrong(Title):
+        def __init__(self, adventurer):
+            super().__init__(adventurer)
+
+        def attack(self):
+            print("Powerful", end=" ")
+            super().attack()
+
+    class TitleAgile(Title):
+        def __init__(self, adventurer):
+            super().__init__(adventurer)
+
+        def attack(self):
+            print("Fast", end=" ")
+            super().attack()
+
+        def useFlash(self):
+            print(" use Fast skill")
+
+    class TitleFire(Title):
+        def __init__(self, adventurer):
+            super().__init__(adventurer)
+
+        def attack(self):
+            print("Burning", end=" ")
+            super().attack()
+
+        def useFire(self):
+            print(" use Burning skill")
     ```
 
 3. 測試結果
 
     ```python
-    
+    archer = Archer("Miller")
+    print(" --- Archar Miller ---")
+    archer.attack()
+
+    print("")
+    print(" --- get Strong Archar Miller ---");
+    sarcher = TitleStrong(archer)
+    sarcher.attack()
+
+    print("")
+    print(" --- get Agile Strong Archar Miller ---");
+    aarcher = TitleAgile(sarcher)
+    aarcher.attack()
+
+    print("")
+    print(" --- get Fire Agile Strong Archar Miller ---");
+    farcher = TitleFire(aarcher)
+    farcher.attack()
+
+    print("")
+    print(" --- get Strong Fire Agile Strong Archar Miller ---");
+    ssarcher = TitleStrong(farcher)
+    ssarcher.attack()
     ```
 
 
