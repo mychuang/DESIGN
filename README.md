@@ -12,7 +12,7 @@
 
 - 行為模式: [策略模式](./BehavioralPatterns/Strategy/README.md)
 
--  結構型模式: [裝飾模式](./StructuralPatterns)
+-  結構型模式: [裝飾模式](./StructuralPatterns/Decorator/README.md)
 
 ### 參考資料
 
