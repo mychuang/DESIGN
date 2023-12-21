@@ -14,6 +14,8 @@
 
 - 結構型模式: [裝飾模式](./StructuralPatterns/Decorator/README.md)
 
+- 行為模式: [觀察者模式](./BehavioralPatterns/Observer/README.md)
+
 ### 參考資料
 
 - https://refactoringguru.cn/design-patterns
