@@ -16,6 +16,8 @@
 
 - 行為模式: [觀察者模式](./BehavioralPatterns/Observer/README.md)
 
+- 行為模式: [命令模式](./BehavioralPatterns/Command/README.md)
+
 ### 參考資料
 
 - https://refactoringguru.cn/design-patterns

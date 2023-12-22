@@ -223,7 +223,7 @@
                 print("The mission is easy, should be performed")
     ```
 
-4. 測試
+5. 測試
 
     ```python
     from Adventurer import  Archer, Warrior
