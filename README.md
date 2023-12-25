@@ -20,6 +20,8 @@
 
 - 結構型模式: [轉接器模式](./StructuralPatterns/Adapter/README.md)
 
+- 結構型模式: [外觀模式](./StructuralPatterns/Facade/README.md)
+
 ### 參考資料
 
 - https://refactoringguru.cn/design-patterns
