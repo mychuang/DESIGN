@@ -18,6 +18,8 @@
 
 - 行為模式: [命令模式](./BehavioralPatterns/Command/README.md)
 
+- 結構型模式: [轉接器模式](./StructuralPatterns/Adapter/README.md)
+
 ### 參考資料
 
 - https://refactoringguru.cn/design-patterns
