@@ -32,6 +32,8 @@
 
     - 行為模式: [樣板模式](./BehavioralPatterns/Template/README.md)
 
+    - 結構型模式: [合成模式](./StructuralPatterns/Composite/README.md)
+
 ### 參考資料
 
 - https://refactoringguru.cn/design-patterns
