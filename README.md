@@ -34,11 +34,21 @@
 
     - 結構型模式: [合成模式](./StructuralPatterns/Composite/README.md)
 
+    - 結構型模式: [代理模式]()
+
+- Level 5
+
+    - 行為模式: [責任鏈模式]()
+
+    - 創建型模式: [原型模式]()
+
 ### 參考資料
 
 - https://refactoringguru.cn/design-patterns
 
 - https://www.tutorialspoint.com/design_pattern/index.htm
+
+- https://developer.huawei.com/consumer/cn/forum/topic/41599165
 
 - 7天學會設計模式:設計模式也可以這樣學
 
