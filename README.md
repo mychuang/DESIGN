@@ -1,6 +1,6 @@
 # 設計模式
 
-此紀錄主要參考網路資源與**7天學會設計模式:設計模式也可以這樣學**範例，整理閱讀順序如下
+此紀錄主要參考網路資源與**7天學會設計模式:設計模式也可以這樣學**範例，挑選閱讀順序如下
 
 - Level 1
 
@@ -34,11 +34,11 @@
 
     - 結構型模式: [合成模式](./StructuralPatterns/Composite/README.md)
 
-    - 結構型模式: [代理模式]()
+    - 結構型模式: [代理模式](./StructuralPatterns/Proxy/README.md)
 
 - Level 5
 
-    - 行為模式: [責任鏈模式]()
+    - 行為模式: [責任鏈模式](./BehavioralPatterns/Chain/README.md)
 
     - 創建型模式: [原型模式]()
 
