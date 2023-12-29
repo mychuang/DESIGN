@@ -40,7 +40,7 @@
 
     - 行為模式: [責任鏈模式](./BehavioralPatterns/Chain/README.md)
 
-    - 創建型模式: [原型模式]()
+    - 創建型模式: [原型模式](./CreationalPatterns/Prototype/README.md)
 
 ### 參考資料
 
